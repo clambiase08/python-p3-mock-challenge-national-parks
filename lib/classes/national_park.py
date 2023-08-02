@@ -34,7 +34,7 @@ class NationalPark:
         return len(self.trips())
 
     def best_visitor(self):
-        pass
+        return max(self.visitors(), key=self.visitors().count)
 
     @classmethod
     def most_visited(cls):

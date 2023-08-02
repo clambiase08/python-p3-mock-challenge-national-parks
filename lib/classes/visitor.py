@@ -11,7 +11,7 @@ class Visitor:
 
     @name.setter
     def name(self, value):
-        if type(value) == str and 1 <= len(value) <= 15:
+        if type(value) == str and 1 <= len(value) <= 15 and not hasattr(self, "name"):
             self._name = value
         else:
             raise Exception("Invalid Visitor name")
