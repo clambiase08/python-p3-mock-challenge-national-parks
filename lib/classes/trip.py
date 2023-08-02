@@ -1,7 +1,3 @@
-from classes.visitor import Visitor
-from classes.national_park import NationalPark
-
-
 class Trip:
     all = []
 
@@ -18,6 +14,8 @@ class Trip:
 
     @visitor.setter
     def visitor(self, visitor):
+        from classes.visitor import Visitor
+
         if isinstance(visitor, Visitor):
             self._visitor = visitor
         else:
@@ -29,6 +27,8 @@ class Trip:
 
     @national_park.setter
     def national_park(self, national_park):
+        from classes.national_park import NationalPark
+
         if isinstance(national_park, NationalPark):
             self._national_park = national_park
         else:

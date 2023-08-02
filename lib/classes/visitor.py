@@ -1,3 +1,6 @@
+from classes.trip import Trip
+
+
 class Visitor:
     all = []
 
@@ -17,8 +20,6 @@ class Visitor:
             raise Exception("Invalid Visitor name")
 
     def trips(self):
-        from classes.trip import Trip
-
         return [trip for trip in Trip.all if trip.visitor == self]
 
     def national_parks(self):

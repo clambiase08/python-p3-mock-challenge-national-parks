@@ -1,3 +1,6 @@
+from classes.trip import Trip
+
+
 class NationalPark:
     all = []
 
@@ -17,24 +20,18 @@ class NationalPark:
             raise Exception("Invalid Park name")
 
     def trips(self):
-        from classes.trip import Trip
-
         for trip in Trip.all:
             if isinstance(trip, Trip):
                 return [trip for trip in Trip.all if trip.national_park == self]
 
     def visitors(self):
-        from classes.visitor import Visitor
-
-        for visitor in Visitor.all:
-            if isinstance(visitor, Visitor):
-                return list(set([trip.visitor for trip in self.trips()]))
+        return list(set([trip.visitor for trip in self.trips()]))
 
     def total_visits(self):
         return len(self.trips())
 
     def best_visitor(self):
-        return max(self.visitors(), key=self.visitors().count)
+        return max(self.visitors(), key=[trip.visitor for trip in self.trips()].count)
 
     @classmethod
     def most_visited(cls):
