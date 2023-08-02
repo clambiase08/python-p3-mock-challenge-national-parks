@@ -1,6 +1,3 @@
-# from classes.trip import Trip
-
-
 class NationalPark:
     def __init__(self, name):
         self.name = name
@@ -17,10 +14,18 @@ class NationalPark:
             raise Exception("Invalid Park name")
 
     def trips(self):
-        pass
+        from classes.trip import Trip
+
+        for trip in Trip.all:
+            if isinstance(trip, Trip):
+                return [trip for trip in Trip.all if trip.national_park == self]
 
     def visitors(self):
-        pass
+        from classes.visitor import Visitor
+
+        for visitor in Visitor.all:
+            if isinstance(visitor, Visitor):
+                return list(set([trip.visitor for trip in self.trips()]))
 
     def total_visits(self):
         pass

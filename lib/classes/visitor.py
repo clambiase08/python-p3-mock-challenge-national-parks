@@ -1,6 +1,9 @@
 class Visitor:
+    all = []
+
     def __init__(self, name):
         self.name = name
+        Visitor.all.append(self)
 
     @property
     def name(self):
@@ -19,7 +22,7 @@ class Visitor:
         return [trip for trip in Trip.all if trip.visitor == self]
 
     def national_parks(self):
-        return [trip.national_park for trip in self.trips()]
+        return list(set([trip.national_park for trip in self.trips()]))
 
     def __repr__(self):
         return f"{self.name}"
