@@ -1,6 +1,9 @@
 class NationalPark:
+    all = []
+
     def __init__(self, name):
         self.name = name
+        NationalPark.all.append(self)
 
     @property
     def name(self):
@@ -28,14 +31,14 @@ class NationalPark:
                 return list(set([trip.visitor for trip in self.trips()]))
 
     def total_visits(self):
-        pass
+        return len(self.trips())
 
     def best_visitor(self):
         pass
 
     @classmethod
     def most_visited(cls):
-        pass
+        return max(cls.all, key=lambda park: park.total_visits())
 
     def __repr__(self):
         return f"{self.name}"
