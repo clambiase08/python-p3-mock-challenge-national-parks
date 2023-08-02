@@ -33,4 +33,4 @@ class NationalPark:
         pass
 
     def __repr__(self):
-        return f"<Nation Park: {self.name}"
+        return f"{self.name}"

@@ -23,4 +23,4 @@ class Visitor:
         pass
 
     def __repr__(self):
-        return f"<Visitor: {self.name}>"
+        return f"{self.name}"
