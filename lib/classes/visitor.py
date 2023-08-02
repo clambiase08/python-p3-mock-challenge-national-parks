@@ -14,7 +14,7 @@ class Visitor:
         if type(value) == str and 1 <= len(value) <= 15:
             self._name = value
         else:
-            raise Exception("Invalid name")
+            raise Exception("Invalid Visitor name")
 
     def trips(self):
         pass

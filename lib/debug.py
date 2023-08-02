@@ -11,5 +11,7 @@ if __name__ == "__main__":
 xtina = Visitor("xtina")
 sean = Visitor("sean")
 
+zion = NationalPark("zion")
+yosemite = NationalPark("yosemite")
 
 ipdb.set_trace()
