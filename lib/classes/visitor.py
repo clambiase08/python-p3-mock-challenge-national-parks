@@ -1,4 +1,4 @@
-from classes.trip import Trip
+# from classes.trip import Trip
 
 
 class Visitor:
